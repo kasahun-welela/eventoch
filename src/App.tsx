@@ -1,10 +1,13 @@
+import { Outlet } from "react-router-dom";
 import "./App.css";
-import { Button } from "./components/ui/button";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      {" "}
-      <Button>Click me</Button>
+      <Header />
+      <Outlet />
+      <Footer />
     </>
   );
 }
