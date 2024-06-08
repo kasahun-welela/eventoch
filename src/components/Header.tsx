@@ -55,7 +55,7 @@ function Header() {
         </div>
       </div>
       {/* Mobile Navigation */}
-      <div className="absolute shadow-2xl top-0 right-0 left-0 md:hidden bg-white py-3">
+      <div className="z-10 absolute shadow-2xl top-0 right-0 left-0 md:hidden bg-white py-3">
         <div className="md:hidden flex justify-between px-5">
           <img src="eventoch.webp" alt="logo" className="w-24 h-10" />
           <div className="flex items-center gap-5">
