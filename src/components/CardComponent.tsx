@@ -9,7 +9,7 @@ import {
 
 function CardComponent() {
   return (
-    <Card>
+    <Card className="transition ease-in-out delay-150  hover:-translate-y-1 hover:shadow-md hover:scale-105 duration-300">
       <CardHeader className="p-0">
         <img src="/die.webp" alt="img " />
 
@@ -21,7 +21,7 @@ function CardComponent() {
         <p className="text-start px-5">Cinema</p>
       </CardHeader>
       <CardContent>
-        <CardTitle>Die Hard-2</CardTitle>
+        <CardTitle className="md:text-base">Die Hard-2</CardTitle>
       </CardContent>
       <CardFooter>
         <div className="flex items-center gap-3">
