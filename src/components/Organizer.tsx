@@ -18,6 +18,7 @@ function Organizer() {
     "zoya.webp",
     "sakjam2.webp",
     "org3.webp",
+    "org2.png",
   ];
 
   return (
@@ -35,7 +36,7 @@ function Organizer() {
     >
       <CarouselContent>
         {topOrganizer.map((organizer, index) => (
-          <CarouselItem key={index} className="md:basis-1/6 ">
+          <CarouselItem key={index} className="basis-1/3 md:basis-1/6 ">
             <img src={organizer} alt={`Organizer ${index}`} />
           </CarouselItem>
         ))}
