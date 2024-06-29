@@ -20,7 +20,9 @@ function Header() {
   return (
     <div className="bg-white py-3">
       <div className="hidden md:flex items-center justify-between md:w-[90%] mx-auto">
-        <img src="eventoch.webp" alt="logo" />
+        <Link to="/">
+          <img src="eventoch.webp" alt="logo" />
+        </Link>
         <div className="flex items-center gap-5">
           <div>
             <Select>
@@ -48,44 +50,74 @@ function Header() {
           </div>
         </div>
         <div className="flex items-center gap-5">
-          <i className="ri-user-line text-xl font-bold"></i>
-          <Button>
-            <i className="ri-add-line text-lg"></i> Add Event
-          </Button>
+          <Link to="/login">
+            <i className="ri-user-line text-xl font-bold"></i>
+          </Link>
+          <Link to="/post_event">
+            <Button>
+              <i className="ri-add-line text-lg"></i> Add Event
+            </Button>
+          </Link>
         </div>
       </div>
       {/* Mobile Navigation */}
       <div className="z-10 absolute shadow-2xl top-0 right-0 left-0 md:hidden bg-white py-3">
         <div className="md:hidden flex justify-between px-5">
-          <img src="eventoch.webp" alt="logo" className="w-24 h-10" />
+          <Link to="/">
+            <img src="eventoch.webp" alt="logo" className="w-24 h-10" />
+          </Link>
           <div className="flex items-center gap-5">
-            <i className="ri-user-line text-xl font-bold"></i>
-            <Button>
-              <i className="ri-add-line text-lg"></i> Add Event
-            </Button>
-            <i className="ri-menu-line text-xl" onClick={toggleButton}></i>
+            <Link to="/login">
+              <i className="ri-user-line text-xl font-bold"></i>{" "}
+            </Link>
+            <Link to="/post_event">
+              <Button>
+                <i className="ri-add-line text-lg"></i> Add Event
+              </Button>
+            </Link>
+
+            {isOpen ? (
+              <i className="ri-close-fill text-xl" onClick={toggleButton}></i>
+            ) : (
+              <i className="ri-menu-line text-xl" onClick={toggleButton}></i>
+            )}
           </div>
         </div>
         {/* Mobile Navigation Content */}
         {isOpen && (
-          <ul className="flex flex-col gap-1 p-3 bg-white ">
+          <ul
+            className="flex flex-col gap-3 p-3 bg-white "
+            onClick={toggleButton}
+          >
             <li>
-              <Link to={"/"}>All Event</Link>
+              <Link to="/all_event" className="hover:text-primary">
+                All Event
+              </Link>
             </li>
             <li>
-              <Link to={"/"}>About Us</Link>
+              <Link to="/about_us" className="hover:text-primary">
+                About Us
+              </Link>
             </li>
             <li>
-              <Link to={"/"}>Contact Us</Link>
+              <Link to="/contact_us" className="hover:text-primary">
+                Contact Us
+              </Link>
             </li>
             <li>
-              <Link to={"/"}>Privacy Method</Link>
+              <Link to="/privacy_policy" className="hover:text-primary">
+                Privacy Method
+              </Link>
             </li>
             <li>
-              <Link to={"/"}>Community Guidelines</Link>
+              <Link to="/community_guideline" className="hover:text-primary">
+                Community Guidelines
+              </Link>
             </li>
             <li>
-              <Link to={"/"}>Terms & Conditions</Link>
+              <Link to="/terms_condition" className="hover:text-primary">
+                Terms & Conditions
+              </Link>
             </li>
           </ul>
         )}
